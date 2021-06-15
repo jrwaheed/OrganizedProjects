@@ -1,14 +1,15 @@
 package at.jamal.jukebox;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class IsaacHayes implements Records{
+public class IsaacHayes implements RecordsInterface {
     private final String title = "The Best of Isaac Hayes";
     private List<SongTitle> albumList;
-    SongTitle song10 = new SongTitle("Hung Up On My Baby");
-    SongTitle song11 = new SongTitle("Walk on By");
-    SongTitle song12 = new SongTitle("Theme of Shaft");
+    private SongTitle song10 = new SongTitle("Hung Up On My Baby");
+    private SongTitle song11 = new SongTitle("Walk on By");
+    private SongTitle song12 = new SongTitle("Theme of Shaft");
 
     public IsaacHayes() {
         this.albumList = new ArrayList<>();
@@ -18,12 +19,14 @@ public class IsaacHayes implements Records{
         albumList.add(song12);
     }
 
-    public List<SongTitle> getIsaacHayesList() {
-        return albumList;
+
+    @Override
+    public String info() {
+        return this.title;
     }
 
     @Override
-    public String info(String title) {
-        return title;
+    public List getAlbumList() {
+        return albumList;
     }
 }

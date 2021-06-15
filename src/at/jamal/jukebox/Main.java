@@ -1,5 +1,6 @@
 package at.jamal.jukebox;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,15 +12,15 @@ public class Main {
     EllaFitzgerald ellaFitzgeraldRecord = new EllaFitzgerald();
     IsaacHayes isaacHayesRecord = new IsaacHayes();
 
+    Magazine magazine = new Magazine();
 
+    magazine.addRecords(milesDavisRecord);
+    magazine.addRecords(johnColtraneRecord);
+    magazine.addRecords(ellaFitzgeraldRecord);
+    magazine.addRecords(isaacHayesRecord);
 
-
-
-
-        System.out.println(milesDavisRecord.getMilesDavisList().get(1).getSongTitle());
-        System.out.println(milesDavisRecord.getMilesDavisList().get(1).getSongTitleLength());
-
-        System.out.println(ellaFitzgeraldRecord.getEllaFitzgeraldList().get(2).getSongTitle());
+    magazine.getRecordList();
+    magazine.getSongList();
 
 
     }

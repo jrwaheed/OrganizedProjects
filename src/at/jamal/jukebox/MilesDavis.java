@@ -1,9 +1,10 @@
 package at.jamal.jukebox;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MilesDavis implements Records{
+public class MilesDavis implements RecordsInterface {
     private final String title = "The Best of Miles Davis";
     private List<SongTitle> albumList;
     private SongTitle song1 = new SongTitle("Blue in Green");
@@ -18,13 +19,17 @@ public class MilesDavis implements Records{
         albumList.add(song3);
     }
 
-    public List<SongTitle> getMilesDavisList() {
-        return albumList;
+
+    @Override
+    public String info() {
+        return this.title;
     }
 
     @Override
-    public String info(String title) {
-        return title;
+    public List getAlbumList() {
+        return albumList;
     }
+
+
 }
 

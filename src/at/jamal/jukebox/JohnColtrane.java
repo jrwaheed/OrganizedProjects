@@ -1,9 +1,10 @@
 package at.jamal.jukebox;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class JohnColtrane implements Records{
+public class JohnColtrane implements RecordsInterface {
     private final String title = "The Best of John Coltrane";
     private List<SongTitle> albumList;
     private SongTitle song4 = new SongTitle("In a Sentimental Mood");
@@ -18,14 +19,18 @@ public class JohnColtrane implements Records{
         albumList.add(song6);
     }
 
-    public List<SongTitle> getJohnColtraneList() {
-        return albumList;
+
+    @Override
+    public String info() {
+        return this.title;
     }
 
     @Override
-    public String info(String title) {
-        return title;
+    public List getAlbumList() {
+        return albumList;
     }
+
+
 }
 
 

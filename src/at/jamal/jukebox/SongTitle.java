@@ -1,5 +1,6 @@
 package at.jamal.jukebox;
 
+
 public class SongTitle {
     private String songTitle;
     private int songTitleLength;
