@@ -22,11 +22,10 @@ public class Magazine {
         }
     }
 
-    public void getSongList(){
+    public void getSongList() {
         for (RecordsInterface record : this.recordList) {
-            for (SongTitle song: record.getAlbumList()
-                 ) {
-
+            for (SongTitle song: record.getAlbumList()) {
+                System.out.println(song.getSongTitle());
             }
         }
     }

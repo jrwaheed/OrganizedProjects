@@ -5,9 +5,9 @@ public class SongTitle {
     private String songTitle;
     private int songTitleLength;
 
-    public SongTitle(String songTitle) {
+    public SongTitle(String songTitle, int songTitleLength) {
         this.songTitle = songTitle;
-        this.songTitleLength = this.songTitle.length();
+        this.songTitleLength = getSongTitleLength();
     }
 
     public String getSongTitle() {
