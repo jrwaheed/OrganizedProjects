@@ -7,7 +7,7 @@ public class SongTitle {
 
     public SongTitle(String songTitle, int songTitleLength) {
         this.songTitle = songTitle;
-        this.songTitleLength = getSongTitleLength();
+        this.songTitleLength = songTitleLength;
     }
 
     public String getSongTitle() {
@@ -17,6 +17,5 @@ public class SongTitle {
     public int getSongTitleLength() {
         return songTitleLength;
     }
-
 
 }

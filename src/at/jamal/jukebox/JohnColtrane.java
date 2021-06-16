@@ -19,6 +19,9 @@ public class JohnColtrane implements RecordsInterface {
         albumList.add(song6);
     }
 
+    public String getTitle() {
+        return title;
+    }
 
     @Override
     public String info() {

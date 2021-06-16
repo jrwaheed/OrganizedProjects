@@ -19,6 +19,9 @@ public class MilesDavis implements RecordsInterface {
         albumList.add(song3);
     }
 
+    public String getTitle() {
+        return this.title;
+    }
 
     @Override
     public String info() {

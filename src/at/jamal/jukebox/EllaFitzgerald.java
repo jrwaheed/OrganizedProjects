@@ -19,6 +19,10 @@ public class EllaFitzgerald implements RecordsInterface {
         albumList.add(song9);
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     @Override
     public String info() {
         return this.title;

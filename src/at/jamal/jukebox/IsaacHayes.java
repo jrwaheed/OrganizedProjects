@@ -19,6 +19,9 @@ public class IsaacHayes implements RecordsInterface {
         albumList.add(song12);
     }
 
+    public String getTitle() {
+        return title;
+    }
 
     @Override
     public String info() {

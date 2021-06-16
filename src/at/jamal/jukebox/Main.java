@@ -1,9 +1,6 @@
 package at.jamal.jukebox;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -12,15 +9,22 @@ public class Main {
     EllaFitzgerald ellaFitzgeraldRecord = new EllaFitzgerald();
     IsaacHayes isaacHayesRecord = new IsaacHayes();
 
+    Player player = new Player();
+
     Magazine magazine = new Magazine();
+
+    JukeBox jukeBox = new JukeBox(player, magazine);
 
     magazine.addRecords(milesDavisRecord);
     magazine.addRecords(johnColtraneRecord);
     magazine.addRecords(ellaFitzgeraldRecord);
     magazine.addRecords(isaacHayesRecord);
 
-    magazine.getRecordList();
-    magazine.getSongList();
+    //magazine.getRecordListInfo();
+
+    //jukeBox.getTotalPlayTime();
+
+    jukeBox.recordSearch();
 
 
     }
