@@ -16,8 +16,12 @@ public class JukeBox {
 
     }
 
-    public void loadRecord(){
+    public void playRecord(){
 
+    }
+
+    public void loadRecord(RecordsInterface record){
+        player.loadRecord(record);
     }
 
     public void addRecord(){

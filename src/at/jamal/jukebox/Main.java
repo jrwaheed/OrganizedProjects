@@ -24,8 +24,7 @@ public class Main {
 
     //jukeBox.getTotalPlayTime();
 
-    jukeBox.recordSearch();
-
-
+    //jukeBox.recordSearch();
+        jukeBox.loadRecord(ellaFitzgeraldRecord);
     }
 }
