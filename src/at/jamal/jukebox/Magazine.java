@@ -17,6 +17,7 @@ public class Magazine {
 
     public void addRecords(RecordsInterface record) {
         this.recordList.add(record);
+
     }
 
 
@@ -26,7 +27,7 @@ public class Magazine {
 
     public void getRecordListInfo() {
         for (RecordsInterface record : this.recordList) {
-            System.out.println(record.info());
+            System.out.println(record.getTitle());
         }
     }
 

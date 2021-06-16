@@ -20,11 +20,6 @@ public class EllaFitzgerald implements RecordsInterface {
     }
 
     public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public String info() {
         return this.title;
     }
 

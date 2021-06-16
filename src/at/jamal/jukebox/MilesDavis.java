@@ -24,11 +24,6 @@ public class MilesDavis implements RecordsInterface {
     }
 
     @Override
-    public String info() {
-        return this.title;
-    }
-
-    @Override
     public List getAlbumList() {
         return albumList;
     }

@@ -7,26 +7,47 @@ import java.util.Scanner;
 public class JukeBox {
     private Player player;
     private Magazine magazine;
+    private Library library;
 
-
-
-    public JukeBox(Player player, Magazine magazine) {
+    public JukeBox(Player player, Magazine magazine, Library library) {
         this.player = player;
         this.magazine = magazine;
-
+        this.library = library;
     }
 
-    public void playRecord(){
 
+    public void playRecord(){
+        if(this.player.getLoaded()) {
+            System.out.println("\nPlaying: " + player.getSongOnDeck().getSongTitle());
+        }
     }
 
     public void loadRecord(RecordsInterface record){
         player.loadRecord(record);
     }
 
-    public void addRecord(){
+    public void addRecord() {
+        int addRecordNumber = 0;
+        if (magazine.getRecordList().size() == 3) {
+            System.out.println("Please remove a record from the magazine first.");
+        } else {
+            System.out.println("Please choose a record to add.");
+            for (RecordsInterface addrecord : library.getLibraryList()) {
+                addRecordNumber++;
+                System.out.println("\t" + addRecordNumber + ". " + addrecord.getTitle());
+            }
+        }
+
+        Scanner recordObj = new Scanner(System.in);
+        System.out.println("\nPlease enter the number of the record you would like to play.");
+        Integer recordSelection = recordObj.nextInt();
+
+
+        //ENDED HERE. WORKING ON SWITCHING FROM LIBRARY TO MAGAZINE:
+
 
     }
+
 
     public void removeRecord(){
 

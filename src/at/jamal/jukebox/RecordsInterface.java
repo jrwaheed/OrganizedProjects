@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface RecordsInterface {
-   public String info ();
    public List<SongTitle> getAlbumList();
    public String getTitle();
 }

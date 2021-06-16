@@ -4,27 +4,40 @@ package at.jamal.jukebox;
 public class Main {
     public static void main(String[] args) {
 
-    MilesDavis milesDavisRecord = new MilesDavis();
-    JohnColtrane johnColtraneRecord = new JohnColtrane();
-    EllaFitzgerald ellaFitzgeraldRecord = new EllaFitzgerald();
-    IsaacHayes isaacHayesRecord = new IsaacHayes();
+        MilesDavis milesDavisRecord = new MilesDavis();
+        JohnColtrane johnColtraneRecord = new JohnColtrane();
+        EllaFitzgerald ellaFitzgeraldRecord = new EllaFitzgerald();
+        IsaacHayes isaacHayesRecord = new IsaacHayes();
+        BillieEilish billieEilishRecord = new BillieEilish();
 
-    Player player = new Player();
+        Player player = new Player();
 
-    Magazine magazine = new Magazine();
+        Magazine magazine = new Magazine();
 
-    JukeBox jukeBox = new JukeBox(player, magazine);
+        Library library = new Library();
 
-    magazine.addRecords(milesDavisRecord);
-    magazine.addRecords(johnColtraneRecord);
-    magazine.addRecords(ellaFitzgeraldRecord);
-    magazine.addRecords(isaacHayesRecord);
+        JukeBox jukeBox = new JukeBox(player, magazine, library);
 
-    //magazine.getRecordListInfo();
+        magazine.addRecords(milesDavisRecord);
+        magazine.addRecords(johnColtraneRecord);
 
-    //jukeBox.getTotalPlayTime();
+        library.addRecords(ellaFitzgeraldRecord);
+        library.addRecords(isaacHayesRecord);
+        library.addRecords(billieEilishRecord);
 
-    //jukeBox.recordSearch();
-        jukeBox.loadRecord(ellaFitzgeraldRecord);
+
+        //magazine.getRecordListInfo();
+
+        //jukeBox.getTotalPlayTime();
+
+        //jukeBox.recordSearch();
+        //jukeBox.loadRecord(billieEilishRecord);
+        //player.getLoaded();
+
+        //jukeBox.playRecord();
+
+        jukeBox.addRecord();
+
+
     }
 }
