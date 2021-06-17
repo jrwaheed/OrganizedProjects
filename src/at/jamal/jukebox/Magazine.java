@@ -17,7 +17,6 @@ public class Magazine {
 
     public void addRecords(RecordsInterface record) {
         this.recordList.add(record);
-
     }
 
 

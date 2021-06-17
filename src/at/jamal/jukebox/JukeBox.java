@@ -42,16 +42,44 @@ public class JukeBox {
         System.out.println("\nPlease enter the number of the record you would like to play.");
         Integer recordSelection = recordObj.nextInt();
 
+        magazine.getRecordList().add(library.getLibraryList().get(recordSelection-1));
+        library.getLibraryList().remove(recordSelection-1);
 
-        //ENDED HERE. WORKING ON SWITCHING FROM LIBRARY TO MAGAZINE:
+        System.out.println("Magazine List");
+        System.out.println(magazine.getRecordList());
 
-
+        System.out.println("Library List");
+        System.out.println(library.getLibraryList());
     }
 
 
     public void removeRecord(){
+        int removeRecordNumber = 0;
+        if (magazine.getRecordList().size() == 0){
+            System.out.println("Magazine is already empty. Please add a record.");
+        } else {
+            System.out.println("Please choose a record to remove.");
+            for (RecordsInterface removerecord : magazine.getRecordList()) {
+                removeRecordNumber++;
+                System.out.println("\t" + removeRecordNumber + ". " + removerecord.getTitle());
+            }
+        }
 
+        Scanner removeObj = new Scanner(System.in);
+        System.out.println("\nPlease enter the number of the record you would like to remove.");
+        Integer removeSelection = removeObj.nextInt();
+
+        library.getLibraryList().add(magazine.getRecordList().get(removeSelection-1));
+        magazine.getRecordList().remove(removeSelection-1);
+        ;
+
+        System.out.println("Magazine List");
+        System.out.println(magazine.getRecordList());
+
+        System.out.println("Library List");
+        System.out.println(library.getLibraryList());
     }
+
 
     public void getTotalPlayTime(){
         magazine.getSumOfMusic();

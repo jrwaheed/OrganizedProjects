@@ -36,8 +36,8 @@ public class Main {
 
         //jukeBox.playRecord();
 
-        jukeBox.addRecord();
-
+        //jukeBox.addRecord();
+        jukeBox.removeRecord();
 
     }
 }
