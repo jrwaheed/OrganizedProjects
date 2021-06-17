@@ -1,7 +1,5 @@
 package at.jamal.jukebox;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class JukeBox {
@@ -15,15 +13,28 @@ public class JukeBox {
         this.library = library;
     }
 
-
+//BROKEN HERE
     public void playRecord(){
-        if(this.player.getLoaded()) {
+        if(this.player.statusPlayerLoaded()) {
             System.out.println("\nPlaying: " + player.getSongOnDeck().getSongTitle());
         }
     }
 
-    public void loadRecord(RecordsInterface record){
-        player.loadRecord(record);
+    public void loadRecordToPlayer(){
+        int loadRecordNumber = 0;
+
+        Scanner loadObj  = new Scanner(System.in);
+        System.out.println("\nPlease enter the number of the album you would like to place in player.");
+
+        for (RecordsInterface loadrecord : magazine.getRecordList()) {
+            loadRecordNumber++;
+            System.out.println("\t" + loadRecordNumber + ". " + loadrecord.getTitle());
+        }
+
+        Integer loadSelection = loadObj.nextInt();
+        player.setRecordOnDeck(magazine.getRecordList().get(loadSelection-1));
+        System.out.println(magazine.getRecordList().get(loadSelection-1).getTitle() + " has been added to the player.");
+        player.setIsLoaded(true);
     }
 
     public void addRecord() {
@@ -39,7 +50,7 @@ public class JukeBox {
         }
 
         Scanner recordObj = new Scanner(System.in);
-        System.out.println("\nPlease enter the number of the record you would like to play.");
+        System.out.println("\nPlease enter the number of the record you would like to add to playlist.");
         Integer recordSelection = recordObj.nextInt();
 
         magazine.getRecordList().add(library.getLibraryList().get(recordSelection-1));
@@ -98,9 +109,9 @@ public class JukeBox {
         }
 
         if (recordAvailable == 1) {
-            System.out.println("Record " + searchRecord + " is available.");
+            System.out.println("Record " + searchRecord + " is available on deck.");
         } else {
-            System.out.println("Record " + searchRecord + " is not available.");
+            System.out.println("Record " + searchRecord + " is not available currently.");
         }
     }
 }

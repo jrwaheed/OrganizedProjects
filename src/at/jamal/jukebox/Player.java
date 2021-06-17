@@ -23,11 +23,13 @@ public class Player {
         this.recordOnDeck = recordOnDeck;
     }
 
-    public Boolean loadRecord(RecordsInterface record) {
+
+
+    public void loadPlayer(RecordsInterface record) {
         this.isLoaded = true;
         int songNumber =0;
         this.recordOnDeck = record;
-        System.out.println("\n" + record.getTitle() + " is currently loaded \n");
+        System.out.println("\n" + record.getTitle() + " is now loaded \n");
         System.out.println("Available songs:");
 
         for (SongTitle song : record.getAlbumList()) {
@@ -41,21 +43,31 @@ public class Player {
 
         this.songOnDeck = recordOnDeck.getAlbumList().get(songSelection - 1);
         System.out.println("Selected song is " + recordOnDeck.getAlbumList().get(songSelection - 1).getSongTitle());
-
-        return isLoaded;
     }
 
     public SongTitle getSongOnDeck() {
         return songOnDeck;
     }
 
-    public  Boolean getLoaded() {
-        //System.out.println(isLoaded);
+    ///BROKEN HERE
+
+    public  void statusPlayerLoaded() {
+        if (isLoaded) {
+            System.out.println("The player is loaded.");
+            System.out.println("The album " + recordOnDeck.getTitle() + " is ready play.");
+        } else{
+            System.out.println("The player is not currently loaded.");
+        }
+    }
+
+    public Boolean getLoaded() {
         return isLoaded;
     }
 
     public void setIsLoaded(Boolean loaded) {
         isLoaded = loaded;
     }
+
+
 }
 

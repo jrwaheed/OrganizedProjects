@@ -25,19 +25,29 @@ public class Main {
         library.addRecords(isaacHayesRecord);
         library.addRecords(billieEilishRecord);
 
+        System.out.println("Welcome to the JukeBox. Please make your selection.\n" +
+                "\n 1. See what is currently on deck." +
+                "\n 2. Play what is currently on deck." +
+                "\n 3. Search for record." +
+                "\n 4. Load an album to the current playlist" +
+                "\n 5. Remove an album from the current playlist." +
+                "\n 6. Get total playtime on deck.\n");
 
-        //magazine.getRecordListInfo();
+
+        //magazine.getRecordsOnDeck();
 
         //jukeBox.getTotalPlayTime();
 
         //jukeBox.recordSearch();
-        //jukeBox.loadRecord(billieEilishRecord);
-        //player.getLoaded();
+        jukeBox.loadRecordToPlayer();
+        player.statusPlayerLoaded();
 
-        //jukeBox.playRecord();
+        jukeBox.playRecord();
 
         //jukeBox.addRecord();
-        jukeBox.removeRecord();
+        //jukeBox.removeRecord();
+
+
 
     }
 }

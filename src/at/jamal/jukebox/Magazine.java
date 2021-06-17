@@ -24,16 +24,17 @@ public class Magazine {
         return recordList;
     }
 
-    public void getRecordListInfo() {
+    public void getRecordsOnDeck() {
+        System.out.println("The albums currently on deck are:");
         for (RecordsInterface record : this.recordList) {
-            System.out.println(record.getTitle());
+            System.out.println("\t" + record.getTitle());
         }
     }
 
-    public void getSongList() {
+    public void getSongsOnDeck() {
         for (RecordsInterface record : this.recordList) {
             for (SongTitle song: record.getAlbumList()) {
-                System.out.println(song.getSongTitle());
+                //System.out.println(song.getSongTitle());
                 songList.add(song);
             }
         }
@@ -41,11 +42,11 @@ public class Magazine {
 
     public void getSumOfMusic(){
         totalRunTime = 0;
-        getSongList();
+        getSongsOnDeck();
         for (SongTitle song: this.songList) {
             totalRunTime += song.getSongTitleLength();
         }
-        System.out.println("Total runtime in the magazine is " + (double) totalRunTime/60 + " minutes.");
+        System.out.println("Total runtime in the magazine is " + (int) totalRunTime/60 + " minutes.");
     }
 }
 
