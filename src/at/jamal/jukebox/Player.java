@@ -25,11 +25,9 @@ public class Player {
 
 
 
-    public void loadPlayer(RecordsInterface record) {
-        this.isLoaded = true;
+    public void loadSongToPlayer(RecordsInterface record) {
         int songNumber =0;
         this.recordOnDeck = record;
-        System.out.println("\n" + record.getTitle() + " is now loaded \n");
         System.out.println("Available songs:");
 
         for (SongTitle song : record.getAlbumList()) {

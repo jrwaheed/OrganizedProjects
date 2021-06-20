@@ -32,9 +32,11 @@ public class JukeBox {
         }
 
         Integer loadSelection = loadObj.nextInt();
-        player.setRecordOnDeck(magazine.getRecordList().get(loadSelection-1));
+        this.player.setRecordOnDeck(magazine.getRecordList().get(loadSelection-1));
         System.out.println(magazine.getRecordList().get(loadSelection-1).getTitle() + " has been added to the player.");
-        player.setIsLoaded(true);
+        this.player.setIsLoaded(true);
+        player.loadSongToPlayer(magazine.getRecordList().get(loadSelection-1));
+
     }
 
     public void addRecord() {
