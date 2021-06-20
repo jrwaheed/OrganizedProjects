@@ -15,7 +15,7 @@ public class JukeBox {
 
 //BROKEN HERE
     public void playRecord(){
-        if(this.player.statusPlayerLoaded()) {
+        if(this.player.getLoaded()) {
             System.out.println("\nPlaying: " + player.getSongOnDeck().getSongTitle());
         }
     }
